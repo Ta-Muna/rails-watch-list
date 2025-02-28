@@ -1,8 +1,14 @@
-<h1>
-You added:
-</h1>
+<h1> You added <%= @list.name %></h1>
 
-<h2>
-<%= @list.name %>
-</h2>
-<%= link_to "Back to all lists", lists_path %>
+<h2>Bookmarks:</h2>
+
+<ul>
+  <% @list.bookmarks.each do |bookmark| %>
+    <li>
+      <%= bookmark.movie.title %> - <%= bookmark.comment %>
+      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>
