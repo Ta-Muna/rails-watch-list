@@ -14,7 +14,9 @@
 /* General styles */
 body {
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background:  url('/assets/movies.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #da899f;
   text-align: center;
 }
 
@@ -24,7 +26,7 @@ ul {
 }
 
 li {
-  background: rgb(203, 200, 207);
+  background: #44121f;
   padding: 20px;
   margin: 10px auto;
   border-radius: 10px;
@@ -40,10 +42,10 @@ li {
 h2 {
   font-size: 24px;
   font-weight: bold;
-  color: #45363a;
+  color: #da899f;
   margin: 20px 0;
   padding: 5px;
-  background-color: #e0e0e0;
+  background-color: #9a6868;
   border-radius: 5px;
   display: inline-block;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -56,19 +58,19 @@ h2,a{
 }
 
 h2:hover {
-  background-color: #d5d5d5;
+  background-color: #e9c0c0;
   transform: scale(1.05);
 }
 
 .link {
   text-decoration: none;
-  color: #45363a;
+  color: #da899f;
   font-weight:bolder;
   font-style:italic;
 }
 
 .link:hover {
-  color: #59036c;
+  color: #f1dee3;
 }
 
 .btn {
