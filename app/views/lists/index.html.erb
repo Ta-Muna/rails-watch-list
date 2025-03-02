@@ -2,10 +2,10 @@
 
 <ul>
   <% @lists.each do |list| %>
-  <h2><%= link_to list.name, list_path(list) %></h2>
+  <h2> <strong> <%=link_to list.name, list_path(list) %></strong></h2>
   <%= link_to "Create a Bookmark for #{list.name}", new_list_bookmark_path(list) %>
+<%= link_to "Delete", list_path(list), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
 <% end %>
 </ul>
 
 <%= link_to 'Create a New List', new_list_path %> <!-- Link to create a new list -->
-
