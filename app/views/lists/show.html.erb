@@ -1,15 +1,17 @@
-<h1> You added <%= @list.name %></h1>
-
-<h2>Bookmarks:</h2>
-
+<h1> You created a bookmark
+<br>
+<strong>"<%= @list.name %>"</strong></h1>
 <ul>
   <% @list.bookmarks.each do |bookmark| %>
     <li>
-      <%= bookmark.movie.title %> - <%= bookmark.comment %>
-      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      <strong> Movie title: </strong> <%= bookmark.movie.title %>
+      <br>
+      <strong> Movie review: </strong> <%= bookmark.comment %>
+      <br>
+      <%= link_to "Delete", bookmark_path(bookmark), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class: "btn btn-danger"%>
     </li>
   <% end %>
 </ul>
-
-<%= link_to "Add a Bookmark", new_list_bookmark_path(@list) %>  <!-- რომელ სიაში დაბრუნდეს ამიტომ ფჩხილებში ვწერ  -->
-<%= link_to "back to Lists", lists_path %>
+<%= link_to "Add a new movie to this Bookmark", new_list_bookmark_path(@list), class: "link"%>  <!-- რომელ სიაში დაბრუნდეს ამიტომ ფჩხილებში ვწერ  -->
+or go
+<%= link_to "back to Lists", lists_path, class: "link"%>
