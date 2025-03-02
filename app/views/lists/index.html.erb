@@ -6,7 +6,7 @@
   <h2>  <%=link_to "📋 #{list.name} 📋", list_path(list)%> </h2>
   <br>
     <% if list.photo.attached? %>
-        <%= cl_image_tag list.photo.key, height: 200, width: 150, crop: :fill %>
+        <%= cl_image_tag list.photo, height: 200, width: 150, crop: :fill %>
 <% end %>
 <br>
   <%= link_to "Create a Bookmark for  #{list.name}", new_list_bookmark_path(list), class: "link"%>
